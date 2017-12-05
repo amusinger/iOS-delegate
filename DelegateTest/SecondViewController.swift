@@ -13,6 +13,10 @@ class SecondViewController: UIViewController {
     var delegate: ChangeLabelDelegate?
         @IBOutlet weak var textField: UITextField!
     
+    @IBAction func GoToThird(_ sender: Any) {
+         let VC = self.storyboard?.instantiateViewController(withIdentifier: "TableViewController") as! TableViewController
+        navigationController?.pushViewController(VC, animated: true)
+    }
     @IBAction func goBackButton(_ sender: Any) {
         delegate?.changeLabel(word: textField.text!)
         navigationController?.popViewController(animated: true)

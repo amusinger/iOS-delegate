@@ -38,6 +38,7 @@ class ViewController: UIViewController, ChangeLabelDelegate {
         
         let tamerlan = Someone(name: "Tamerlan", surname: "Kamanov")
         
+        
         tamerlan.getFullName(name: tamerlan.name, surname: tamerlan.surname) { (fullName) in
             self.fullName = fullName
             print("CLOSURE FULL NAME -> \(fullName)")

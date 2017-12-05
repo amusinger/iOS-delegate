@@ -33,7 +33,7 @@ class Someone {
     func getFullName(name: String, surname: String, completion: @escaping(String) -> Void){
         let timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (timer) in
             completion(name + " " + surname)
-        }
+        }	
     }
     
 }
