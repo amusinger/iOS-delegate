@@ -12,6 +12,7 @@ class SecondViewController: UIViewController {
     
     var delegate: ChangeLabelDelegate?
         @IBOutlet weak var textField: UITextField!
+    
     @IBAction func goBackButton(_ sender: Any) {
         delegate?.changeLabel(word: textField.text!)
         navigationController?.popViewController(animated: true)
@@ -19,6 +20,7 @@ class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tamerlan = Someone(name: "Tamerlan", surname: "Kamanov")
         // Do any additional setup after loading the view, typically from a nib.
     }
     

@@ -16,7 +16,6 @@ class ViewController: UIViewController, ChangeLabelDelegate {
    
     
     
-
     @IBOutlet weak var FirstLabel: UILabel!
     
     @IBAction func moveToSecond(_ sender: Any) {
@@ -33,7 +32,11 @@ class ViewController: UIViewController, ChangeLabelDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let tamerlan = Someone(name: "Tamerlan", surname: "Kamanov")
+        let aizhan = Someone(name: "Aizhan", surname: "Yerimbetova")
+        
+        let temirlan = Temirlan.shared.name
     }
 
     override func didReceiveMemoryWarning() {
