@@ -15,6 +15,10 @@ class Temirlan {
     
     let name: String = "Temirlan"
     let surname: String = "Ismukhanov"
+    
+    func getFullName(name: String, surname: String, completion: @escaping(String) -> Void){
+        completion(name + surname)
+    }
 }
 
 class Someone {
@@ -26,5 +30,10 @@ class Someone {
         self.surname = surname
     }
     
+    func getFullName(name: String, surname: String, completion: @escaping(String) -> Void){
+        let timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (timer) in
+            completion(name + " " + surname)
+        }
+    }
     
 }

@@ -18,6 +18,9 @@ class ViewController: UIViewController, ChangeLabelDelegate {
     
     @IBOutlet weak var FirstLabel: UILabel!
     
+    var fullName: String = ""
+    
+    
     @IBAction func moveToSecond(_ sender: Any) {
         
         let VC = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
@@ -34,9 +37,13 @@ class ViewController: UIViewController, ChangeLabelDelegate {
         super.viewDidLoad()
         
         let tamerlan = Someone(name: "Tamerlan", surname: "Kamanov")
-        let aizhan = Someone(name: "Aizhan", surname: "Yerimbetova")
         
-        let temirlan = Temirlan.shared.name
+        tamerlan.getFullName(name: tamerlan.name, surname: tamerlan.surname) { (fullName) in
+            self.fullName = fullName
+            print("CLOSURE FULL NAME -> \(fullName)")
+        }
+        
+        print("NOT CLOSURE -> \(self.fullName)" )
     }
 
     override func didReceiveMemoryWarning() {
